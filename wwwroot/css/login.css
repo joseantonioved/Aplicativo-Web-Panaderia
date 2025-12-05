@@ -1,0 +1,301 @@
+/* ============================================
+   LOGIN - PANADERÍA ARTESANAL
+   ============================================ */
+
+/* Variables CSS */
+:root {
+    --font-size: 16px;
+    --background: #0a0e1a;
+    --foreground: #e8dcc8;
+    --card: #121827;
+    --card-foreground: #e8dcc8;
+    --primary: #d4b896;
+    --primary-foreground: #0a0e1a;
+    --secondary: #1a2234;
+    --muted: #1a2234;
+    --muted-foreground: #8a8475;
+    --border: rgba(212, 184, 150, 0.15);
+    --input-background: #1a2234;
+    --radius: 0.625rem;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 { font-size: 1.5rem; font-weight: 500; line-height: 1.5; }
+h2 { font-size: 1.25rem; font-weight: 500; line-height: 1.5; }
+h3 { font-size: 1.125rem; font-weight: 500; line-height: 1.5; }
+p { font-size: 1rem; font-weight: 400; line-height: 1.5; }
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--background) 0%, #0f1420 100%);
+}
+
+.login-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+}
+
+.login-branding {
+    display: none;
+}
+
+.login-logo-box {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.login-logo-box-mobile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-3 { gap: 0.75rem; }
+.text-center { text-align: center; }
+.text-muted { color: var(--muted-foreground); }
+.text-primary { color: var(--primary); }
+.text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.75rem; }
+.text-2xl { font-size: 1.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mt-1 { margin-top: 0.25rem; }
+.p-4 { padding: 1rem; }
+.pt-4 { padding-top: 1rem; }
+.rounded-lg { border-radius: var(--radius); }
+.overflow-hidden { overflow: hidden; }
+.shadow-2xl { box-shadow: var(--shadow-2xl); }
+.border { border: 1px solid var(--border); }
+.border-t { border-top: 1px solid var(--border); }
+.hidden { display: none; }
+
+.card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.card-description {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin-top: 0.25rem;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.tabs {
+    margin-bottom: 1.5rem;
+}
+
+.tabs-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    background-color: var(--muted);
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+}
+
+.tab-trigger {
+    padding: 0.75rem 1rem;
+    background-color: transparent;
+    border: none;
+    border-radius: calc(var(--radius) - 0.25rem);
+    color: var(--muted-foreground);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.tab-trigger.active {
+    background-color: var(--card);
+    color: var(--foreground);
+    box-shadow: var(--shadow);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper .icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--muted-foreground);
+}
+
+.input {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    background-color: var(--input-background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--foreground);
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.input.with-icon {
+    padding-left: 2.5rem;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(212, 184, 150, 0.1);
+}
+
+.input::placeholder {
+    color: var(--muted-foreground);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary) 100%);
+    color: var(--primary-foreground);
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.link-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0;
+}
+
+.link-btn:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+    .login-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .login-branding {
+        display: block;
+    }
+    
+    .login-logo-box-mobile {
+        display: none;
+    }
+}

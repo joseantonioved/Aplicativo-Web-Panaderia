@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería Artesanal - Inicio</title>
+    <link rel="icon" href="~/Imagenes/logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/public.css">
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-content">
+                <div class="header-left">
+                    <div class="logo">
+                        <img id="logo-img" alt="Logo" />
+                    </div>
+                    <div>
+                        <div class="header-title">Panadería Artesanal</div>
+                        <div class="header-subtitle">Productos frescos cada día</div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-ghost btn-sm" onclick='location.href="@Url.Action("Index", "LoginMvc")"'>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/>
+                        </svg>
+                        Iniciar Sesión
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Panadería Artesanal</h1>
+                    <p class="hero-subtitle">Sabor tradicional, calidad excepcional</p>
+                    <p class="hero-text">Descubre nuestra selección de panes, pasteles y productos horneados con ingredientes frescos y recetas tradicionales.</p>
+                    <button class="btn btn-primary btn-lg" onclick='location.href="@Url.Action("Index", "LoginMvc")"'>
+                        Ver Productos y Comprar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <main class="container main-content">
+            <div class="section-header">
+                <h2>Nuestros Productos</h2>
+                <p class="text-muted">Explora nuestra variedad de productos artesanales</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6" id="products-grid" ></div>
+
+            <!-- CTA Banner -->
+            <div class="cta-banner">
+                <h3>¿Listo para hacer tu pedido?</h3>
+                <p>Regístrate o inicia sesión para comprar nuestros productos frescos</p>
+                <button class="btn btn-primary btn-lg" onclick='location.href="@Url.Action("Index", "LoginMvc")"'>
+                    Comenzar a Comprar
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content container">
+                <div>
+                    <h4 style="margin-bottom: 0.5rem;">Panadería Artesanal</h4>
+                    <p class="text-sm">© 2025 Todos los derechos reservados</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Sobre Nosotros</a>
+                    <a href="#" class="footer-link">Contacto</a>
+                    <a class="footer-link" href="@Url.Action("Index", "LoginMvc")"'>Iniciar Sesión</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/js/public.js"></script>
+</body>
+</html>

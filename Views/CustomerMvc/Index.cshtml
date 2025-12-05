@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Panadería Artesanal</title>
+    <link rel="icon" href="~/Imagenes/logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/customer.css">
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-content">
+                <div class="header-left">
+                    <div class="logo">
+                        <img id="logo-img" alt="Logo" />
+                    </div>
+                    <div>
+                        <div class="header-title">Panadería Artesanal</div>
+                        <div class="header-subtitle">Tienda Online</div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                        </svg>
+                        <span class="text-sm" id="customer-name">Cliente</span>
+                    </div>
+                    <button class="btn btn-ghost btn-sm" onclick="location.href='@Url.Action("Index", "LoginMvc")'">
+                        Cerrar Sesión
+                    </button>
+                    <button class="btn btn-ghost btn-sm cart-btn" onclick="toggleCart()">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        <span id="cart-badge" class="cart-badge hidden">0</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <div class="container nav-tabs-content">
+                <button class="view-tab active" onclick="switchView('shop')">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                    </svg>
+                    <span>Tienda</span>
+                </button>
+                <button class="view-tab" onclick="switchView('orders')">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/>
+                    </svg>
+                    <span>Mis Pedidos</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container main-content" id="customer-content"></main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content container">
+                <p>© 2025 Panadería Artesanal - Tienda Online</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-backdrop" onclick="toggleCart()"></div>
+        <div class="modal-content">
+            <button class="close-btn" onclick="toggleCart()">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Mi Carrito de Compras</h3>
+                <p class="modal-description">Revisa tus productos y procede al pago</p>
+            </div>
+            <div class="modal-body" id="cart-body"></div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="~/js/customer.js"></script>
+
+</body>
+</html>
