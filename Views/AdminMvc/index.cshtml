@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Panadería Artesanal</title>
+    <link rel="icon" href="~/Imagenes/logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-content">
+                <div class="header-left">
+                    <div class="logo">
+                        <img id="logo-img" alt="Logo" />
+                    </div>
+                    <div>
+                        <div class="header-title">Panadería Artesanal</div>
+                        <div class="header-subtitle">Sistema de Gestión - Panel Administrativo</div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                        </svg>
+                        <div>
+                            <div class="text-sm" id="admin-name">Administrador</div>
+                            <div class="text-xs" style="opacity: 0.8;">Administrador</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-ghost btn-sm" onclick='location.href="@Url.Action("Index", "LoginMvc")"'>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+                        </svg>
+                        Cerrar Sesión
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <div class="container nav-tabs-content">
+                <button class="nav-tab active" onclick="switchTab('dashboard')">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                    <span>Panel Principal</span>
+                </button>
+                <button class="nav-tab" onclick="switchTab('catalog')">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    </svg>
+                    <span>Catálogo</span>
+                </button>
+                <button class="nav-tab" onclick="switchTab('orders')">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/>
+                    </svg>
+                    <span>Pedidos</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container main-content" id="admin-content"></main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content container">
+                <p>© 2025 Panadería Artesanal - Panel Administrativo</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/js/admi.js"></script>
+</body>
+</html>
