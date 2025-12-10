@@ -333,3 +333,4 @@ C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\e7ivn58jhx-{0}-plqrdlujse-plqrdlujse.gz
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\rey11sjyl1-{0}-45yldrdecf-45yldrdecf.gz
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\j8q1v9hh1h-{0}-ygcj9tauya-ygcj9tauya.gz
+C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\tuukzak3hy-{0}-lfyrhj4tj6-lfyrhj4tj6.gz

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Error del Servidor | Panadería Artesanal</title>
+    <link rel="stylesheet" href="~/css/error.css">
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-content">
+            <!-- Icon -->
+            <div class="error-icon error-icon-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+            </div>
+
+            <!-- Error Code -->
+            <h1 class="error-code">500</h1>
+
+            <!-- Error Title -->
+            <h2 class="error-title">Error del Servidor</h2>
+
+            <!-- Error Description -->
+            <p class="error-description">
+                ¡Ups! Algo salió mal en nuestro horno.
+                Estamos trabajando para solucionar el problema lo antes posible.
+            </p>
+
+            <!-- Technical Info -->
+            <div class="error-info">
+                <p class="error-info-text">
+                    <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                    Si el problema persiste, por favor contacta con soporte técnico.
+                </p>
+            </div>
+
+            <!-- Actions -->
+            <div class="error-actions">
+                <button class="btn btn-primary" onclick="window.location.reload()">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 2v6h-6"/>
+                        <path d="M3 12a9 9 0 0 1 15-6.7L21 8"/>
+                        <path d="M3 22v-6h6"/>
+                        <path d="M21 12a9 9 0 0 1-15 6.7L3 16"/>
+                    </svg>
+                    Reintentar
+                </button>
+                <button class="btn btn-secondary" <button class="btn btn-secondary" onclick='location.href="@Url.Action("Index", "PublicMvc")"'>>
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Volver al Inicio
+                </button>
+            </div>
+
+            <!-- Bread Decoration -->
+            <div class="bread-decoration">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" fill="none">
+                    <path d="M20 60 Q50 20, 100 40 T180 60 L180 80 Q100 90, 20 80 Z" fill="currentColor" opacity="0.1"/>
+                    <ellipse cx="50" cy="55" rx="4" ry="3" fill="currentColor" opacity="0.15"/>
+                    <ellipse cx="100" cy="50" rx="4" ry="3" fill="currentColor" opacity="0.15"/>
+                    <ellipse cx="150" cy="55" rx="4" ry="3" fill="currentColor" opacity="0.15"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
