@@ -254,7 +254,6 @@ C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\scopedcss\
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\z52bg6x9pc-{0}-j0bp27xce0-j0bp27xce0.gz
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\srdmckve7j-{0}-qm33rky56c-qm33rky56c.gz
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\ydtha0gym8-{0}-dsjeor2ow7-dsjeor2ow7.gz
-C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\rey11sjyl1-{0}-45yldrdecf-45yldrdecf.gz
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\tm2s7vn7fn-{0}-hl1mdvs0ek-hl1mdvs0ek.gz
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\zopjakzu7c-{0}-er6ehhobhz-er6ehhobhz.gz
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\i95dh0rioy-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -332,3 +331,5 @@ C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\Aplicativo
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\ref\AplicativoWebMVC.dll
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\1o48v8zi5b-{0}-stis2ey0me-stis2ey0me.gz
 C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\e7ivn58jhx-{0}-plqrdlujse-plqrdlujse.gz
+C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\rey11sjyl1-{0}-45yldrdecf-45yldrdecf.gz
+C:\Users\User\Desktop\Aplicativo-Web-Panaderia-main\obj\Debug\net10.0\compressed\j8q1v9hh1h-{0}-ygcj9tauya-ygcj9tauya.gz

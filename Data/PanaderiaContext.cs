@@ -73,17 +73,23 @@ namespace AplicativoWebMVC.Data
             modelBuilder.Entity<Catalogo>(entity =>
             {
                 entity.ToTable("catalogo");
-                entity.HasKey(e => e.IdCatalogo);
+                entity.HasKey(e => e.IdProducto); // <-- usar IdProducto
 
-                entity.Property(e => e.IdCatalogo).HasColumnName("id_catalogo").ValueGeneratedOnAdd();
-                entity.Property(e => e.IdProducto).HasColumnName("id_producto");
-                entity.Property(e => e.IdCategoria).HasColumnName("id_categoria");
-                entity.Property(e => e.NombreProducto).HasColumnName("nombre_producto").HasMaxLength(100);
-                entity.Property(e => e.Descripcion).HasColumnName("descripcion").HasMaxLength(255);
-                entity.Property(e => e.UnidadMedida).HasColumnName("unidad_medida").HasMaxLength(50);
-                entity.Property(e => e.Precio).HasColumnName("precio");
-                entity.Property(e => e.Estado).HasColumnName("estado").HasMaxLength(20);
-            });
+                entity.Property(e => e.IdProducto).HasColumnName("id_producto").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdCategoria).HasColumnName("id_categoria").IsRequired();
+                entity.Property(e => e.NombreProducto).HasColumnName("nombre_producto").HasMaxLength(150).IsRequired();
+                entity.Property(e => e.Descripcion).HasColumnName("descripcion").HasColumnType("TEXT");
+                entity.Property(e => e.UnidadMedida).HasColumnName("unidad_medida").HasMaxLength(20).HasDefaultValue("unidad");
+                entity.Property(e => e.Precio).HasColumnName("precio").HasColumnType("DECIMAL(10,2)").IsRequired();
+                entity.Property(e => e.Estado).HasColumnName("estado").HasDefaultValue(1);
+
+                // relación con categoría
+                entity.HasOne(e => e.Categoria)
+                    .WithMany(c => c.Productos)
+                    .HasForeignKey(e => e.IdCategoria)
+                    .OnDelete(DeleteBehavior.Restrict);
+        });
+
 
             // ==================== CLIENTE ====================
             modelBuilder.Entity<Cliente>(entity =>
@@ -98,6 +104,24 @@ namespace AplicativoWebMVC.Data
                 entity.Property(e => e.Telefono).HasColumnName("telefono");
                 entity.Property(e => e.Email).HasColumnName("email").HasMaxLength(150);
                 entity.Property(e => e.Direccion).HasColumnName("direccion").HasMaxLength(255);
+            });
+
+            // ==================== VENTA ====================
+
+            // ==================== CATALOGO / PRODUCTOS ====================
+            modelBuilder.Entity<Catalogo>(entity =>
+            {
+                entity.ToTable("catalogo");
+                entity.HasKey(e => e.IdProducto);
+                
+                entity.Property(e => e.IdProducto).HasColumnName("id_producto").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdCategoria).HasColumnName("id_categoria").IsRequired();
+                entity.Property(e => e.NombreProducto).HasColumnName("nombre_producto").HasMaxLength(150).IsRequired();
+                entity.Property(e => e.Descripcion).HasColumnName("descripcion").HasColumnType("TEXT");
+                entity.Property(e => e.UnidadMedida).HasColumnName("unidad_medida").HasMaxLength(20).HasDefaultValue("unidad");
+                entity.Property(e => e.Precio).HasColumnName("precio").HasColumnType("DECIMAL(10,2)").IsRequired();
+                entity.Property(e => e.Estado).HasColumnName("estado").HasDefaultValue(1);
+                entity.HasOne(e => e.Categoria).WithMany(c => c.Productos).HasForeignKey(e => e.IdCategoria).OnDelete(DeleteBehavior.Restrict);
             });
 
             // ==================== VENTA ====================
@@ -176,9 +200,14 @@ namespace AplicativoWebMVC.Data
 
                 entity.Property(e => e.IdInventario).HasColumnName("id_inventario").ValueGeneratedOnAdd();
                 entity.Property(e => e.IdProducto).HasColumnName("id_producto");
-                entity.Property(e => e.StockActual).HasColumnName("stock_actual");
+                entity.Property(e => e.StockActual).HasColumnName("stock_actual").HasColumnType("DECIMAL(10,2)");
                 entity.Property(e => e.Ubicacion).HasColumnName("ubicacion").HasMaxLength(100);
                 entity.Property(e => e.FechaActualizacion).HasColumnName("fecha_actualizacion");
+
+                entity.HasOne(e => e.Producto)
+                    .WithMany()
+                    .HasForeignKey(e => e.IdProducto)
+                    .OnDelete(DeleteBehavior.Restrict);
             });
 
             // ==================== INVENTARIO ENTRADA ====================

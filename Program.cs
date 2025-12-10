@@ -13,6 +13,15 @@ builder.Services.AddDbContext<PanaderiaContext>(options =>
     )
 );
 
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+        options.JsonSerializerOptions.WriteIndented = true; // opcional para que se vea bonito
+    });
+
+
 // ---------------------------------------------
 // 2. Activar MVC (Controladores + Vistas)
 // ---------------------------------------------
@@ -44,7 +53,7 @@ app.UseAuthorization();
 // ---------------------------------------------
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=CustomerMvc}/{action=Index}/{id?}"
+    pattern: "{controller=AdminMvc}/{action=Index}/{id?}"
 );
 
 // ---------------------------------------------
